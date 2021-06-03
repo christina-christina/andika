@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Pembayaran.PembayaranFragment"
+    android:background="#FAFAFA">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardUseCompatPadding="true"
+            android:elevation="10dp"
+            android:background="@android:color/white"
+            app:cardCornerRadius="7dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/tv_masa_pembayaran"
+                    style="@style/TextViewWithDrawable"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="0 bulan"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center_vertical"
+                    android:drawableStart="@drawable/ic_access_time_icon"/>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:max="100"
+                    android:progress="0"
+                    android:layout_marginStart="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="16dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_masa_pembayaran"
+                    android:layout_marginTop="18dp"/>
+
+                <TextView
+                    android:id="@+id/durasi_progressbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 tahun"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    app:layout_constraintTop_toBottomOf="@id/progressBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/tv_total_pinjaman"
+                    style="@style/TextViewWithDrawable"
+                    android:text="Total Pinjaman"
+                    android:gravity="center_vertical"
+                    android:drawableStart="@drawable/ic_poll_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/durasi_progressbar"/>
+
+                <TextView
+                    android:id="@+id/tv_total_pinjaman_value"
+                    style="@style/TextViewNominalPembayaran"
+                    android:text="Rp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/durasi_progressbar"/>
+
+                <TextView
+                    android:id="@+id/tv_masa_bayar"
+                    style="@style/TextViewWithDrawable"
+                    android:text="Masa Pembayaran"
+                    android:gravity="center_vertical"
+                    android:drawableStart="@drawable/ic_date_range"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_total_pinjaman"/>
+
+                <TextView
+                    android:id="@+id/tv_masa_bayar_value"
+                    style="@style/TextViewNominalPembayaran"
+                    android:text=""
+                    android:paddingTop="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_total_pinjaman_value"/>
+
+                <TextView
+                    android:id="@+id/tv_gaji"
+                    style="@style/TextViewWithDrawable"
+                    android:text="Gaji Anda"
+                    android:gravity="center_vertical"
+                    android:drawableStart="@drawable/ic_account_balance_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_masa_bayar"/>
+
+                <TextView
+                    android:id="@+id/tv_gaji_value"
+                    style="@style/TextViewNominalPembayaran"
+                    android:text="Rp5000000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_masa_bayar_value" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:cardUseCompatPadding="true"
+        android:elevation="10dp"
+        android:background="@android:color/white"
+        app:cardCornerRadius="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_view_1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tv_label_bank"
+                style="@style/TextViewPembayaran"
+                android:text="Pilih Bank Transfer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/iv_bca"
+                android:layout_width="68dp"
+                android:layout_height="36dp"
+                android:background="@drawable/border_gray"
+                android:src="@drawable/bca"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:padding="4dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_bank"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                android:id="@+id/iv_bni"
+                android:layout_width="68dp"
+                android:layout_height="36dp"
+                android:background="@drawable/border_gray"
+                android:src="@drawable/bni"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:padding="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_bank"
+                app:layout_constraintStart_toEndOf="@id/iv_bca"/>
+
+            <ImageView
+                android:id="@+id/iv_mandiri"
+                android:layout_width="68dp"
+                android:layout_height="36dp"
+                android:background="@drawable/border_gray"
+                android:src="@drawable/mandiri"
+                android:layout_marginStart="16dp"
+                android:padding="2dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_bank"
+                app:layout_constraintStart_toEndOf="@id/iv_bni"/>
+
+
+            <TextView
+                android:id="@+id/tv_label_norek"
+                style="@style/TextViewPembayaran"
+                android:text="Nomor Rekening Tujuan"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_bni"
+                />
+
+            <TextView
+                android:id="@+id/et_norek"
+                style="@style/EditTextLoginRegisterTheme"
+                android:text="627489088"
+                android:textColor="@android:color/darker_gray"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_norek"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/tv_label_tagihan"
+                style="@style/TextViewPembayaran"
+                android:text="Nominal Tagihan"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_norek"
+                />
+
+            <TextView
+                android:id="@+id/tv_tagihan"
+                style="@style/EditTextLoginRegisterTheme"
+                android:text="Rp"
+                android:textColor="@android:color/darker_gray"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_tagihan"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/tv_maks"
+                style="@style/TextViewDescRiwayat"
+                android:text="Diambil dari gaji kamu x 10%"
+                app:layout_constraintTop_toBottomOf="@id/tv_tagihan"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="right"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="16dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_bayar"
+        style="@style/ButtonTheme"
+        android:text="Bayar"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_view_2"
+        />
+
+<TextView
+    android:background="@android:color/white"
+    android:layout_width="match_parent"
+    app:layout_constraintTop_toBottomOf="@id/btn_bayar"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_height="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Peminjaman.PeminjamanUbFragment"
+    android:background="@android:color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Berapa jumlah uang yang ingin kamu pinjam?"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="24dp"/>
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_undraw_fitting_pieces"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_nominal"
+            style="@style/TextViewPeminjaman"
+            android:text="Nominal Peminjaman"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_image"
+            android:layout_marginStart="16dp"/>
+
+        <EditText
+            android:id="@+id/et_nominal"
+            style="@style/EditTextFormPeminjaman"
+            android:hint="Rp"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/tv_nominal"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_maks"
+            style="@style/TextViewDescRiwayat"
+            android:text="Maksimum peminjaman per bulan adalah 1 juta"
+            app:layout_constraintTop_toBottomOf="@id/et_nominal"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="right"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_ketentuan_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_maks"
+            android:text="Ketentuan"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="33dp"/>
+
+        <TextView
+            android:id="@+id/tv_ketentuan"
+            style="@style/TextViewDescRiwayat"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:text="1. Untuk peminjaman bulanan hanya dapat dilakukan sebulan sekali\n2. Maksimal nominal peminjaman bulanan adalah satu juta\n3. Peminjaman bulanan akan langsung masuk ke saldo kamu jika telah disetujui dan dapat ditransfer ke rekening bank milik kamu"
+            app:layout_constraintTop_toBottomOf="@id/tv_ketentuan_label"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="13sp"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            style="@style/TextViewDescRiwayat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dengan ini saya menyetujui semua ketentuan dan syarat yang berlaku di ANDIKA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ketentuan"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="16dp"/>
+
+        <Button
+            android:id="@+id/btn_ajukan"
+            style="@style/ButtonTheme"
+            android:text="Ajukan Peminjaman"
+            android:enabled="true"
+            app:layout_constraintTop_toBottomOf="@id/checkBox"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:src="@drawable/rectangle_blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/white"
+            android:elevation="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_rectangle_1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_rectangle_2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_nama"
+                    style="@style/TextViewBeranda"
+                    android:text="Christina"
+                    android:textSize="18sp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_saldo_label"
+                    style="@style/TextViewBeranda"
+                    android:text="Saldo Pinjaman"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="24dp"/>
+
+                <TextView
+                    android:id="@+id/tv_saldo"
+                    style="@style/TextViewBeranda"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="24dp"
+                    android:text="Rp0"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/tv_peminjaman_label"
+            style="@style/TextViewBeranda"
+            android:text="Peminjaman"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"/>
+
+        <FrameLayout
+            android:id="@+id/btn_uang_kuliah"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="18dp"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_uang_bulanan"
+            app:layout_constraintTop_toBottomOf="@id/tv_peminjaman_label">
+
+            <ImageButton
+                android:id="@+id/btn_uang_kuliah_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_gray"
+                android:padding="15dp"
+                android:src="@drawable/ic_college_graduation_icon" />
+
+            <TextView
+                style="@style/TextViewBeranda"
+                android:layout_gravity="bottom"
+                android:layout_margin="22dp"
+                android:text="Uang\nKuliah"
+                android:textSize="24sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/btn_uang_bulanan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_uang_kuliah"
+            app:layout_constraintTop_toBottomOf="@id/tv_peminjaman_label">
+
+            <ImageButton
+                android:id="@+id/btn_uang_bulanan_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_gray"
+                android:padding="15dp"
+                android:src="@drawable/ic_give_money_icon" />
+
+            <TextView
+                style="@style/TextViewBeranda"
+                android:layout_gravity="bottom"
+                android:layout_margin="22dp"
+                android:text="Uang\nBulanan"
+                android:textSize="24sp" />
+        </FrameLayout>
+
+
+        <TextView
+            android:id="@+id/tv_tentang_isa"
+            style="@style/TextViewBeranda"
+            android:text="Tentang ISA"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_uang_kuliah"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/tv_apa_isa"
+            style="@style/ButtonThemeBeranda"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_conversation_icon"
+            android:text="Apa itu ISA?"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_tentang_isa" />
+
+        <TextView
+            android:id="@+id/tv_cara_kerja"
+            style="@style/ButtonThemeBeranda"
+            android:layout_marginTop="12dp"
+            android:drawableStart="@drawable/ic_user_icon"
+            android:text="Cara kerja ISA"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_apa_isa"
+            />
+
+        <TextView
+            android:id="@+id/tv_cara_bayar"
+            style="@style/ButtonThemeBeranda"
+            android:layout_marginTop="12dp"
+            android:drawableStart="@drawable/ic_invoice_icon"
+            android:text="Cara membayar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_cara_kerja"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="60dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

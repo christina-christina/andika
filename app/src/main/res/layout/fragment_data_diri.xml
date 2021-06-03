@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_nama_lengkap"
+            style="@style/TextViewPeminjaman"
+            android:text="Nama Lengkap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_nama_lengkap"
+            style="@style/EditTextFormPeminjaman"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nama_lengkap" />
+
+        <TextView
+            android:id="@+id/tv_no_hp"
+            style="@style/TextViewPeminjaman"
+            android:text="No. HP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_nama_lengkap" />
+
+        <EditText
+            android:id="@+id/et_no_hp"
+            style="@style/EditTextFormPeminjaman"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_no_hp" />
+
+        <TextView
+            android:id="@+id/tv_nama_bank"
+            style="@style/TextViewPeminjaman"
+            android:text="Nama Bank"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_no_hp" />
+
+        <EditText
+            android:id="@+id/et_nama_bank"
+            style="@style/EditTextFormPeminjaman"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nama_bank" />
+
+        <TextView
+            android:id="@+id/tv_no_rekening"
+            style="@style/TextViewPeminjaman"
+            android:text="No. Rekening"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_nama_bank" />
+
+        <EditText
+            android:id="@+id/et_no_rekening"
+            style="@style/EditTextFormPeminjaman"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_no_rekening" />
+
+        <TextView
+            android:id="@+id/tv_ktm"
+            style="@style/TextViewPeminjaman"
+            android:text="KTM"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_no_rekening" />
+
+        <TextView
+            android:id="@+id/tv_upload_ktm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_gray"
+            android:paddingRight="60dp"
+            android:text="Upload KTM"
+            android:padding="24dp"
+            style="@style/EditTextFormPeminjaman"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ktm"/>
+
+        <Button
+            android:id="@+id/btn_upload_ktm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonTheme"
+            android:padding="0dp"
+            android:text="Pilih File"
+            app:layout_constraintEnd_toEndOf="@id/tv_upload_ktm"
+            app:layout_constraintTop_toTopOf="@id/tv_upload_ktm"
+            app:layout_constraintBottom_toBottomOf="@id/tv_upload_ktm"/>
+
+        <TextView
+            android:id="@+id/tv_ktp"
+            style="@style/TextViewPeminjaman"
+            android:text="KTP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_upload_ktm" />
+
+        <TextView
+            android:id="@+id/tv_upload_ktp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_gray"
+            android:paddingRight="60dp"
+            android:text="Upload KTP"
+            android:padding="24dp"
+            style="@style/EditTextFormPeminjaman"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ktp"/>
+
+        <Button
+            android:id="@+id/btn_upload_ktp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonTheme"
+            android:padding="0dp"
+            android:text="Pilih File"
+            app:layout_constraintEnd_toEndOf="@id/tv_upload_ktp"
+            app:layout_constraintTop_toTopOf="@id/tv_upload_ktp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_upload_ktp"/>
+
+        <Button
+            android:id="@+id/btn_simpan"
+            style="@style/ButtonTheme"
+            android:text="Simpan"
+            app:layout_constraintTop_toBottomOf="@id/tv_upload_ktp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="40dp"
+            android:enabled="true"
+            android:layout_marginTop="20dp"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

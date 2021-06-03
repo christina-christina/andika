@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome"
+        android:name="com.platzi.conf.view.ui.WelcomeFragment">
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register"
+        android:name="com.platzi.conf.view.ui.RegisterFragment">
+        <action
+            android:id="@+id/action_registerFragment_to_afterRegistrationFragment"
+            app:destination="@id/afterRegistrationFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login"
+        android:name="com.platzi.conf.view.ui.LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_berandaFragment"
+            app:destination="@id/berandaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/berandaFragment"
+        android:label="fragment_beranda"
+        tools:layout="@layout/fragment_beranda"
+        android:name="com.platzi.conf.view.ui.BerandaFragment">
+        <action
+            android:id="@+id/action_berandaFragment_to_peminjamanUkFragment"
+            app:destination="@id/peminjamanUkFragment" />
+        <action
+            android:id="@+id/action_berandaFragment_to_peminjamanUbFragment"
+            app:destination="@id/peminjamanUbFragment" />
+        <action
+            android:id="@+id/action_berandaFragment_to_pengertianIsaFragment"
+            app:destination="@id/pengertianIsaFragment" />
+        <action
+            android:id="@+id/action_berandaFragment_to_kerjaIsaFragment"
+            app:destination="@id/kerjaIsaFragment" />
+        <action
+            android:id="@+id/action_berandaFragment_to_bayarIsaFragment"
+            app:destination="@id/bayarIsaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/akunFragment"
+        android:label="fragment_akun"
+        tools:layout="@layout/fragment_akun"
+        android:name="com.platzi.conf.view.ui.AkunFragment">
+        <action
+            android:id="@+id/action_akunFragment_to_cairkanSaldoFragment"
+            app:destination="@id/cairkanSaldoFragment" />
+        <action
+            android:id="@+id/action_akunFragment_to_proposalFragment"
+            app:destination="@id/proposalFragment" />
+        <action
+            android:id="@+id/action_akunFragment_to_dataDiriFragment"
+            app:destination="@id/dataDiriFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/afterRegistrationFragment"
+        android:label="fragment_after_registration"
+        tools:layout="@layout/fragment_after_registration"
+        android:name="com.platzi.conf.view.ui.AfterRegistrationFragment">
+        <action
+            android:id="@+id/action_afterRegistrationFragment_to_berandaFragment"
+            app:destination="@id/berandaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pembayaranFragment"
+        android:label="fragment_pembayaran"
+        tools:layout="@layout/fragment_pembayaran"
+        android:name="com.platzi.conf.view.ui.PembayaranFragment"/>
+    <fragment
+        android:id="@+id/riwayatFragment"
+        android:label="fragment_riwayat"
+        tools:layout="@layout/fragment_riwayat"
+        android:name="com.platzi.conf.view.ui.RiwayatFragment"/>
+
+    <fragment
+        android:id="@+id/peminjamanUkFragment"
+        android:name="com.platzi.conf.view.ui.PeminjamanUkFragment"
+        android:label="fragment_peminjaman_uk"
+        tools:layout="@layout/fragment_peminjaman_uk">
+        <action
+            android:id="@+id/action_peminjamanUkFragment_to_berandaFragment"
+            app:destination="@id/berandaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/peminjamanUbFragment"
+        android:name="com.platzi.conf.view.ui.PeminjamanUbFragment"
+        android:label="fragment_peminjaman_ub"
+        tools:layout="@layout/fragment_peminjaman_ub">
+        <action
+            android:id="@+id/action_peminjamanUbFragment_to_berandaFragment"
+            app:destination="@id/berandaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/proposalFragment"
+        android:name="com.platzi.conf.view.ui.ProposalFragment"
+        android:label="fragment_proposal"
+        tools:layout="@layout/fragment_proposal" />
+
+
+    <fragment
+        android:id="@+id/cairkanSaldoFragment"
+        android:name="com.platzi.conf.view.ui.CairkanSaldoFragment"
+        android:label="fragment_cairkan_saldo"
+        tools:layout="@layout/fragment_cairkan_saldo" />
+
+    <fragment
+        android:id="@+id/dataDiriFragment"
+        android:name="com.platzi.conf.view.ui.DataDiriFragment"
+        android:label="fragment_data_diri"
+        tools:layout="@layout/fragment_data_diri" />
+
+    <fragment
+        android:id="@+id/pengertianIsaFragment"
+        android:name="com.platzi.conf.view.ui.PengertianIsaFragment"
+        android:label="fragment_pengertian_isa"
+        tools:layout="@layout/fragment_pengertian_isa" />
+
+    <fragment
+        android:id="@+id/kerjaIsaFragment"
+        android:name="com.platzi.conf.view.ui.KerjaIsaFragment"
+        android:label="fragment_kerja_isa"
+        tools:layout="@layout/fragment_kerja_isa" />
+
+    <fragment
+        android:id="@+id/bayarIsaFragment"
+        android:name="com.platzi.conf.view.ui.BayarIsaFragment"
+        android:label="fragment_bayar_isa"
+        tools:layout="@layout/fragment_bayar_isa" />
+
+
+
+    // ============================================================================================
+
+
+
+
+    <fragment
+        android:id="@+id/navHomeFragment"
+        android:name="com.platzi.conf.view.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_scheduleFragment"
+            app:destination="@id/navScheduleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navScheduleFragment"
+        android:name="com.platzi.conf.view.ui.schedule.ScheduleFragment"
+        android:label="fragment_schedule"
+        tools:layout="@layout/fragment_schedule" >
+        <action
+            android:id="@+id/action_scheduleFragment_to_speakerFragment"
+            app:destination="@id/navSpeakerFragment" />
+        <action
+            android:id="@+id/action_navScheduleFragment_to_scheduleDetailFragmentDialog"
+            app:destination="@id/scheduleDetailFragmentDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/navMapFragment"
+        android:name="com.platzi.conf.view.ui.location.LocationFragment"
+        android:label="fragment_location"
+        tools:layout="@layout/fragment_location" >
+        <action
+            android:id="@+id/action_navMapFragment_to_locationDetailFragmentDialog"
+            app:destination="@id/locationDetailFragmentDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/navSpeakerFragment"
+        android:name="com.platzi.conf.view.ui.speaker.SpeakerFragment"
+        android:label="SpeakerFragment" >
+        <action
+            android:id="@+id/action_speakerFragment_to_locationFragment"
+            app:destination="@id/navMapFragment" />
+        <action
+            android:id="@+id/action_navSpeakerFragment_to_speakerDetailFragmentDialog"
+            app:destination="@id/speakerDetailFragmentDialog" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/speakerDetailFragmentDialog"
+        android:name="com.platzi.conf.view.ui.speaker.SpeakerDetailDialogFragment"
+        android:label="SpeakerDetailFragmentDialog"
+        tools:layout="@layout/fragment_speaker_detail_dialog"
+        />
+
+    <dialog
+        android:id="@+id/scheduleDetailFragmentDialog"
+        android:name="com.platzi.conf.view.ui.schedule.ScheduleDetailDialogFragment"
+        android:label="ScheduleDetailFragmentDialog"
+        tools:layout="@layout/fragment_schedule_detail_dialog"
+        />
+
+    <dialog
+        android:id="@+id/locationDetailFragmentDialog"
+        android:name="com.platzi.conf.view.ui.location.LocationDetailDialogFragment"
+        android:label="LocationDetailFragmentDialog"
+        tools:layout="@layout/fragment_location_detail_dialog"
+        />
+</navigation>

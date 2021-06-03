@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F8F8F8">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F8F8F8">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/blue_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rectangle_blue"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tv_akun_saya"
+                style="@style/TextViewProfile"
+                android:text="Akun Saya"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profilepic"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/profile_picture"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_akun_saya" />
+
+            <TextView
+                android:id="@+id/tv_nama"
+                style="@style/TextViewProfile"
+                android:layout_marginTop="12dp"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_profilepic" />
+
+            <TextView
+                android:id="@+id/tv_univ"
+                style="@style/TextViewProfile"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Telkom University"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_nama" />
+
+            <TextView
+                android:id="@+id/tv_verifikasi"
+                style="@style/TextViewProfile"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_check_circle_black_24dp"
+                android:drawablePadding="8dp"
+                android:text="Akun Terverifikasi"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_univ" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/blue_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_cairkan_saldo"
+                style="@style/ButtonThemeProfile"
+                android:drawableStart="@drawable/ic_payment_icon"
+                android:gravity="center_vertical"
+                android:text="Cairkan Saldo Bulanan"/>
+
+            <TextView
+                android:id="@+id/tv_data_diri"
+                style="@style/ButtonThemeProfile"
+                android:drawableStart="@drawable/ic_mood_logo"
+                android:gravity="center_vertical"
+                android:text="Data Diri" />
+
+            <TextView
+                android:id="@+id/tv_up_proposal"
+                style="@style/ButtonThemeProfile"
+                android:drawableStart="@drawable/ic_description_logo"
+                android:gravity="center_vertical"
+                android:text="Upload Proposal" />
+
+            <TextView
+                android:id="@+id/tv_pengaturan_aplikasi"
+                style="@style/SmallLabelProfile"
+                android:text="PENGATURAN APLIKASI" />
+
+            <TextView
+                android:id="@+id/tv_pengaturan"
+                style="@style/ButtonThemeProfile"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:text="Pengaturan" />
+
+            <TextView
+                android:id="@+id/tv_versi_app"
+                style="@style/ButtonThemeProfile"
+                android:gravity="center_vertical"
+                android:text="Versi App" />
+
+            <TextView
+                android:id="@+id/tv_informasi"
+                style="@style/SmallLabelProfile"
+                android:text="INFORMASI" />
+
+            <TextView
+                android:id="@+id/tv_faq"
+                style="@style/ButtonThemeProfile"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:text="FAQ" />
+
+            <TextView
+                android:id="@+id/tv_syarat_kondisi"
+                style="@style/ButtonThemeProfile"
+                android:gravity="center_vertical"
+                android:text="Syarat and Kondisi" />
+
+
+            <TextView
+                android:id="@+id/tv_kebijakan_privasi"
+                style="@style/ButtonThemeProfile"
+                android:gravity="center_vertical"
+                android:text="Kebijakan Privasi" />
+
+            <TextView
+                android:id="@+id/tv_akun"
+                style="@style/SmallLabelProfile"
+                android:text="AKUN" />
+
+            <TextView
+                android:id="@+id/tv_keluar"
+                style="@style/ButtonThemeProfile"
+                android:layout_marginBottom="40dp"
+                android:gravity="center_vertical"
+                android:text="Keluar" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

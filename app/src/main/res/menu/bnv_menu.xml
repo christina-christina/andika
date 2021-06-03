@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/berandaFragment"
+        android:title="@string/beranda"
+        android:icon="@drawable/ic_home_icon"
+        app:showAsAction="withText"/>
+
+    <item
+        android:id="@+id/riwayatFragment"
+        android:title="@string/riwayat"
+        android:icon="@drawable/ic_list_alt_icon"
+        app:showAsAction="withText"/>
+
+    <item
+        android:id="@+id/pembayaranFragment"
+        android:title="@string/pembayaran"
+        android:icon="@drawable/ic_payment_icon"
+        app:showAsAction="withText"/>
+
+    <item
+        android:id="@+id/akunFragment"
+        android:title="@string/akun"
+        android:icon="@drawable/ic_person_bottom_menu"
+        app:showAsAction="withText"/>
+
+</menu>

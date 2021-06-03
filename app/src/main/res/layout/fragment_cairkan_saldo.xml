@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Akun.CairkanSaldoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FAFAFA">
+
+        <TextView
+            android:id="@+id/tv_pilih_bank"
+            style="@style/TextViewPembayaran"
+            android:text="Pilih Bank"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tv_pilih_bank"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <ImageView
+                android:id="@+id/iv_bca"
+                android:layout_width="68dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/border_gray"
+                android:padding="4dp"
+                android:src="@drawable/bca" />
+
+            <ImageView
+                android:id="@+id/iv_bni"
+                android:layout_width="68dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/border_gray"
+                android:padding="12dp"
+                android:src="@drawable/bni" />
+
+            <ImageView
+                android:id="@+id/iv_mandiri"
+                android:layout_width="68dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/border_gray"
+                android:padding="2dp"
+                android:src="@drawable/mandiri" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_norek"
+            style="@style/TextViewPembayaran"
+            android:text="No. Rekening Kamu"
+            app:layout_constraintTop_toBottomOf="@id/ll"
+            android:hint="12345678"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <EditText
+            android:id="@+id/et_norek"
+            style="@style/EditTextCairkanSaldo"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_norek"
+            app:layout_constraintStart_toStartOf="parent"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/tv_nominal"
+            style="@style/TextViewPembayaran"
+            android:text="Nominal"
+            app:layout_constraintTop_toBottomOf="@id/et_norek"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <EditText
+            android:id="@+id/et_nominal"
+            style="@style/EditTextCairkanSaldo"
+            android:layout_marginTop="4dp"
+            android:hint="Rp"
+            app:layout_constraintTop_toBottomOf="@id/tv_nominal"
+            app:layout_constraintStart_toStartOf="parent"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/tv_ket"
+            style="@style/TextViewDescRiwayat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Nominal tidak boleh melebihi saldo."
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_nominal" />
+
+        <Button
+            android:id="@+id/btn_next"
+            style="@style/ButtonTheme"
+            android:layout_marginTop="60dp"
+            android:text="@string/selanjutnya"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ket" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
