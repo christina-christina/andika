@@ -223,6 +223,22 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="ButtonThemeProfile2" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:drawablePadding">20dp</item>
+        <item name="android:paddingBottom">17dp</item>
+        <item name="android:paddingTop">17dp</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
     <style name="SmallLabelProfile" parent="TextAppearance.AppCompat.Button">
         <item name="android:textAllCaps">false</item>
         <item name="android:fontFamily">@font/poppins_regular</item>

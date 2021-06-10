@@ -21,4 +21,15 @@ class ExampleInstrumentedTest {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("com.platzi.conf", appContext.packageName)
     }
+
+    @Test
+    fun testIsPasswordValid() {
+        val testPassword1 = "abcabc"
+        val testPassword2 = "abcabcabca"
+        val testPassword3 = "abcabcabca123"
+
+        assertEquals(false, Utils().checkPassword(testPassword1))
+        assertEquals(false, Utils().checkPassword(testPassword2))
+        assertEquals(true, Utils().checkPassword(testPassword3))
+    }
 }

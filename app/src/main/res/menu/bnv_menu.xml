@@ -11,11 +11,11 @@
         android:id="@+id/riwayatFragment"
         android:title="@string/riwayat"
         android:icon="@drawable/ic_list_alt_icon"
-        app:showAsAction="withText"/>
+        app:showAsAction="withText"/>pe
 
     <item
-        android:id="@+id/pembayaranFragment"
-        android:title="@string/pembayaran"
+        android:id="@+id/transaksiFragment"
+        android:title="Transaksi"
         android:icon="@drawable/ic_payment_icon"
         app:showAsAction="withText"/>
 

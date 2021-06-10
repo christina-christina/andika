@@ -60,7 +60,7 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/tv_bulan"
+            android:id="@+id/tv_tahun"
             style="@style/TextViewRiwayat"
             android:textSize="12sp"
             android:text="Okt"

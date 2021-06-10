@@ -1,42 +1,33 @@
 {
   "project_info": {
-    "project_number": "998255474942",
-    "firebase_url": "https://platziconf-32304.firebaseio.com",
-    "project_id": "platziconf-32304",
-    "storage_bucket": "platziconf-32304.appspot.com"
+    "project_number": "583850654027",
+    "project_id": "andika-72c52",
+    "storage_bucket": "andika-72c52.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:998255474942:android:5c77b9d5987eab5cff8daf",
+        "mobilesdk_app_id": "1:583850654027:android:e4ad17afb0a19c86e890ce",
         "android_client_info": {
           "package_name": "com.platzi.conf"
         }
       },
       "oauth_client": [
         {
-          "client_id": "998255474942-5533odqlbi26v5lkr51ti6njd3oco0i6.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.platzi.conf",
-            "certificate_hash": "4434bc5cefef4b7b55e02d005d7941c02518d2ad"
-          }
-        },
-        {
-          "client_id": "998255474942-dn8eik0va7ba457q9od7egue5du86b15.apps.googleusercontent.com",
+          "client_id": "583850654027-fcui1d1pcu6es19b5no261s9v4sdormj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDFTsk_JOL4n4Ak2aWOI2Kh1qgdXWEBoSs"
+          "current_key": "AIzaSyD3se-QQpW49c2sQ3cO6RGDhyqL61DqnUQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "998255474942-dn8eik0va7ba457q9od7egue5du86b15.apps.googleusercontent.com",
+              "client_id": "583850654027-fcui1d1pcu6es19b5no261s9v4sdormj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

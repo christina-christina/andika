@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#F8F8F8">
+    android:background="#F8F8F8"
+    android:scrollbars="none">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -46,16 +47,6 @@
                 app:layout_constraintTop_toBottomOf="@id/iv_profilepic" />
 
             <TextView
-                android:id="@+id/tv_univ"
-                style="@style/TextViewProfile"
-                android:fontFamily="@font/poppins_medium"
-                android:text="Telkom University"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_nama" />
-
-            <TextView
                 android:id="@+id/tv_verifikasi"
                 style="@style/TextViewProfile"
                 android:layout_marginTop="30dp"
@@ -65,23 +56,85 @@
                 android:textSize="14dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_univ" />
+                app:layout_constraintTop_toBottomOf="@id/tv_nama" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/blue_layout"
-            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            android:orientation="vertical">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/blue_layout">
 
-            <TextView
-                android:id="@+id/tv_cairkan_saldo"
-                style="@style/ButtonThemeProfile"
-                android:drawableStart="@drawable/ic_payment_icon"
-                android:gravity="center_vertical"
-                android:text="Cairkan Saldo Bulanan"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_saldo"
+                    style="@style/ButtonThemeProfile2"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Saldo" />
+
+
+                <TextView
+                    android:id="@+id/tv_saldo_nominal"
+                    style="@style/ButtonThemeProfile2"
+                    android:layout_weight="1"
+                    android:layout_gravity="end"
+                    android:textAlignment="textEnd"
+                    android:text="Rp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_dicairkan"
+                    style="@style/ButtonThemeProfile2"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Dicairkan" />
+
+
+                <TextView
+                    android:id="@+id/tv_dicairkan_nominal"
+                    style="@style/ButtonThemeProfile2"
+                    android:layout_weight="1"
+                    android:layout_gravity="end"
+                    android:textAlignment="textEnd"
+                    android:text="Rp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_tunggakan"
+                    style="@style/ButtonThemeProfile2"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Tunggakan" />
+
+
+                <TextView
+                    android:id="@+id/tv_tunggakan_nominal"
+                    style="@style/ButtonThemeProfile2"
+                    android:layout_weight="1"
+                    android:layout_gravity="end"
+                    android:textAlignment="textEnd"
+                    android:text="Rp" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_data_diri"

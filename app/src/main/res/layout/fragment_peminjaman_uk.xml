@@ -78,25 +78,10 @@
             app:layout_constraintTop_toBottomOf="@id/tv_biaya_semester" />
 
         <TextView
-            android:id="@+id/tv_nominal_peminjaman"
-            style="@style/TextViewPeminjaman"
-            android:text="Nominal Peminjaman"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_biaya_semester" />
-
-        <EditText
-            android:id="@+id/et_nominal_peminjaman"
-            style="@style/EditTextFormPeminjaman"
-            app:layout_constraintStart_toStartOf="parent"
-            android:inputType="number"
-            android:hint="Rp"
-            app:layout_constraintTop_toBottomOf="@id/tv_nominal_peminjaman" />
-
-        <TextView
             android:id="@+id/tv_desc"
             style="@style/TextViewDescRiwayat"
             android:text="Maksimum total pinjaman uang\nkuliah adalah Rp100.000.000"
-            app:layout_constraintTop_toBottomOf="@id/et_nominal_peminjaman"
+            app:layout_constraintTop_toBottomOf="@id/et_biaya_semester"
             app:layout_constraintEnd_toEndOf="parent"
             android:gravity="right"
             android:layout_marginTop="5dp"
