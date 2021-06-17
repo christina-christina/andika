@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.platzi.conf.R
 import com.platzi.conf.model.Pembayaran
 import kotlinx.android.synthetic.main.riwayat_pembayaran_card.view.*
+import java.text.NumberFormat
 import java.time.format.DateTimeFormatter
 
 class RiwayatPembayaranAdapter(val riwayat : MutableList<Pembayaran>) : RecyclerView.Adapter<RiwayatPembayaranAdapter.RiwayatPembayaranViewHolder>() {
@@ -22,13 +23,15 @@ class RiwayatPembayaranAdapter(val riwayat : MutableList<Pembayaran>) : Recycler
 
             holder.card.tv_image.setImageResource(R.drawable.ic_give_money_blue)
 
-            holder.card.tv_nominal.text = "Rp " + riwayat_item.nominal
+            holder.card.tv_nominal.text = "Rp " + NumberFormat.getInstance().format(riwayat_item.nominal!!.toInt())
 
             val tanggal = DateTimeFormatter.ofPattern("dd MMMM").format(DateTimeFormatter.ofPattern("dd/MM/yyyy").parse(riwayat_item.tanggal))
             val tahun = DateTimeFormatter.ofPattern("yyyy").format(DateTimeFormatter.ofPattern("dd/MM/yyyy").parse(riwayat_item.tanggal))
 
             holder.card.tv_tanggal.text = tanggal
             holder.card.tv_tahun.text = tahun
+
+            holder.card.tv_status.text = riwayat_item.status
         }
     }
 

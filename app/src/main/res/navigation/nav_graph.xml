@@ -129,7 +129,11 @@
         android:id="@+id/dataDiriFragment"
         android:name="com.platzi.conf.view.ui.profil.DataDiriFragment"
         android:label="fragment_data_diri"
-        tools:layout="@layout/fragment_data_diri" />
+        tools:layout="@layout/fragment_data_diri" >
+        <action
+            android:id="@+id/action_dataDiriFragment_to_akunFragment"
+            app:destination="@id/akunFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/pengertianIsaFragment"

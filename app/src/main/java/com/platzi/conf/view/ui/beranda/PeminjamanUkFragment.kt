@@ -43,15 +43,16 @@ class PeminjamanUkFragment : Fragment() {
         btn_ajukan.setOnClickListener {
 
             var pinjaman = Pinjaman(
-                et_nama_univ.text.toString(),
-                et_fakultas.text.toString(),
-                et_prodi.text.toString(),
-                et_alamat_univ.text.toString(),
-                et_biaya_semester.text.toString(),
-                SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date()),
-                jenis = "uang_kuliah"
+                namaUniversitas = et_nama_univ.text.toString(),
+                fakultas = et_fakultas.text.toString(),
+                prodi = et_prodi.text.toString(),
+                alamatUniversitas = et_alamat_univ.text.toString(),
+                nominalPengajuan = et_biaya_semester.text.toString(),
+                tanggalPengajuan = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date()),
+                jenis = "uang_kuliah",
+                status = "Menunggu konfirmasi"
             )
-            viewModel.simpanPinjamanUk(pinjaman)
+            viewModel.simpanPinjaman(pinjaman)
         }
         observerViewModel()
     }

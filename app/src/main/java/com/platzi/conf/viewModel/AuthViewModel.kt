@@ -55,7 +55,7 @@ class AuthViewModel:ViewModel() {
                 authResponse.value = exception.message
                 processFinished()
             }
-        }, email, password, user)
+        }, email, password)
     }
 
     fun logout(){

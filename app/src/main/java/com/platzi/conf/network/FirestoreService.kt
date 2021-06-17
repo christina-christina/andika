@@ -17,9 +17,10 @@ class FirestoreService {
     }
 
     fun simpanDataDiri(callback:Callback<String>, user: User) {
+
         userId = FirebaseAuth.getInstance().currentUser?.uid
+
         if (userId != null) {
-            Log.i("id User", userId.toString())
             this.firebaseFirestore.collection("user").document(userId!!).set(user)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
@@ -33,26 +34,12 @@ class FirestoreService {
         }
     }
 
-    fun simpanDataPinjamanUb(callback:Callback<String>, pinjaman: Pinjaman) {
+    fun simpanDataPinjaman(callback:Callback<String>, pinjaman: Pinjaman) {
         if (userId != null) {
 
-            this.firebaseFirestore.collection("pinjaman").document(userId!!).collection("UangBulanan").add(pinjaman)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        callback.onSuccess("Berhasil")
-                    } else if (task.exception != null) {
-                        callback.onFailed(task.exception!!)
-                    } else {
-                        callback.onFailed(Exception("Gagal!"))
-                    }
-                }
-        }
-    }
+            pinjaman.userId = userId
 
-    fun simpanDataPinjamanUk(callback:Callback<String>, pinjaman: Pinjaman) {
-        if (userId != null) {
-
-            this.firebaseFirestore.collection("pinjaman").document(userId!!).collection("UangKuliah").add(pinjaman)
+            this.firebaseFirestore.collection("pinjaman").add(pinjaman)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         callback.onSuccess("Berhasil")
@@ -68,7 +55,9 @@ class FirestoreService {
     fun simpanDataPencairan(callback:Callback<String>, pencairan: Pencairan) {
         if (userId != null) {
 
-            this.firebaseFirestore.collection("pencairan").document(userId!!).collection("pencairan").add(pencairan)
+            pencairan.userId = userId
+
+            this.firebaseFirestore.collection("pencairan").add(pencairan)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         callback.onSuccess("Berhasil")
@@ -88,68 +77,78 @@ class FirestoreService {
                 .addOnSuccessListener { result ->
                     callback.onSuccess(result.toObject(User::class.java))
                 }
-        }
-    }
-
-    fun getDataPinjamanUk(callback: Callback<List<Pinjaman>>){
-        if (userId != null) {
-            this.firebaseFirestore.collection("pinjaman").document(userId!!).collection("UangKuliah")
-                .get()
-                .addOnSuccessListener { result ->
-                    for(doc in result){
-                        val list = result.toObjects(Pinjaman::class.java)
-                        callback.onSuccess(list)
-                        break
-                    }
+                .addOnFailureListener {
+                    callback.onFailed( it )
                 }
         }
     }
 
-    fun getDataPinjamanUb(callback: Callback<List<Pinjaman>>){
+    fun getDataPinjaman(callback: Callback<List<Pinjaman>>){
         if (userId != null) {
-            this.firebaseFirestore.collection("pinjaman").document(userId!!).collection("UangBulanan")
+            this.firebaseFirestore.collection("pinjaman")
                 .get()
                 .addOnSuccessListener { result ->
+
+                    val listPinjaman = mutableListOf<Pinjaman>()
+
                     for(doc in result){
-                        val list = result.toObjects(Pinjaman::class.java)
-                        callback.onSuccess(list)
-                        break
+                        val item = doc.toObject(Pinjaman::class.java)
+
+                        if (item.userId == userId){
+                            listPinjaman.add(item)
+                        }
                     }
+                    callback.onSuccess(listPinjaman)
                 }
         }
     }
 
     fun getDataPembayaran(callback: Callback<List<Pembayaran>>){
         if (userId != null) {
-            this.firebaseFirestore.collection("pembayaran").document(userId!!).collection("pembayaran")
+            this.firebaseFirestore.collection("pembayaran")
                 .get()
                 .addOnSuccessListener { result ->
+
+                    val listPembayaran = mutableListOf<Pembayaran>()
+
                     for(doc in result){
-                        val list = result.toObjects(Pembayaran::class.java)
-                        callback.onSuccess(list)
-                        break
+                        val item = doc.toObject(Pembayaran::class.java)
+
+                        if (item.userId == userId) {
+                            listPembayaran.add(item)
+                        }
                     }
+                    callback.onSuccess(listPembayaran)
                 }
         }
     }
 
     fun getDataPencairan(callback: Callback<List<Pencairan>>){
         if (userId != null) {
-            this.firebaseFirestore.collection("pencairan").document(userId!!).collection("pencairan")
+            this.firebaseFirestore.collection("pencairan")
                 .get()
                 .addOnSuccessListener { result ->
+
+                    val listPencairan = mutableListOf<Pencairan>()
+
                     for(doc in result){
-                        val list = result.toObjects(Pencairan::class.java)
-                        callback.onSuccess(list)
-                        break
+                        val item = doc.toObject(Pencairan::class.java)
+
+                        if (item.userId == userId) {
+                            listPencairan.add(item)
+                        }
                     }
+                    callback.onSuccess(listPencairan)
                 }
         }
     }
 
     fun simpanDataPembayaran(callback:Callback<String>, pembayaran: Pembayaran) {
         if (userId != null) {
-            this.firebaseFirestore.collection("pembayaran").document(userId!!).collection("pembayaran").add(pembayaran)
+
+            pembayaran.userId = userId
+
+            this.firebaseFirestore.collection("pembayaran").add(pembayaran)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         callback.onSuccess("Berhasil")

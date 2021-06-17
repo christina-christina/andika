@@ -47,36 +47,24 @@ class RiwayatPinjamFragment : Fragment() {
         rvAdapter = RiwayatPeminjamanAdapter(pinjamanList)
         recyclerView.adapter = rvAdapter
 
-        viewModel.getDataPinjamanUb()
-        viewModel.getDataPinjamanUk()
+        viewModel.getDataPinjaman()
 
         observerViewModel()
     }
 
     fun observerViewModel() {
 
-        viewModel.dataPinjamanUbResponse.observe(viewLifecycleOwner, Observer<List<Pinjaman>> { resp ->
+        viewModel.dataPinjamanResponse.observe(
+            viewLifecycleOwner,
+            Observer<List<Pinjaman>> { resp ->
 
-            if (resp != null) {
-                resp.forEach { pinjamanList.add(it) }
-                pinjamanList.sortBy { it.tanggalPengajuan }
-                rvAdapter.notifyDataSetChanged()
-            } else {
-                Toast.makeText(activity, "Gagal Memuat", Toast.LENGTH_SHORT).show()
-            }
-        })
-
-
-        viewModel.dataPinjamanUkResponse.observe(viewLifecycleOwner, Observer<List<Pinjaman>> { resp ->
-
-            if (resp != null) {
-                resp.forEach { pinjamanList.add(it) }
-                pinjamanList.sortBy { it.tanggalPengajuan }
-                rvAdapter.notifyDataSetChanged()
-            } else {
-                Toast.makeText(activity, "Gagal Memuat", Toast.LENGTH_SHORT).show()
-            }
-        })
+                if (resp != null) {
+                    resp.forEach { pinjamanList.add(it) }
+                    pinjamanList.sortBy { it.tanggalPengajuan }
+                    rvAdapter.notifyDataSetChanged()
+                } else {
+                    Toast.makeText(activity, "Gagal Memuat", Toast.LENGTH_SHORT).show()
+                }
+            })
     }
-
 }

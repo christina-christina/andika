@@ -13,8 +13,10 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.platzi.conf.R
+import com.platzi.conf.model.User
 import com.platzi.conf.viewModel.ProposalViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_akun.*
 import kotlinx.android.synthetic.main.fragment_proposal.*
 
 /**
@@ -45,6 +47,7 @@ class ProposalFragment : Fragment() {
         btn_proposal.setOnClickListener {
             launchFilePicker()
         }
+        viewModel.getDataDiri()
         observerViewModel()
     }
 
@@ -59,6 +62,14 @@ class ProposalFragment : Fragment() {
 
         //controlara cuando los datos terminen de cargar
         viewModel.isLoading.observe(viewLifecycleOwner, Observer <Boolean> {
+
+        })
+
+        viewModel.getDataResponse.observe(viewLifecycleOwner, Observer<User> { resp ->
+
+            if (resp.proposalUrl != null) {
+                tv_proposal.setText("Telah di-upload")
+            }
 
         })
     }

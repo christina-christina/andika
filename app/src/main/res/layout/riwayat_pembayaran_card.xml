@@ -41,6 +41,16 @@
             android:text="Rp. 1.000.000"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_image"
+            />
+
+        <TextView
+            android:id="@+id/tv_status"
+            style="@style/TextViewDescRiwayat"
+            android:text="Disetujui"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@id/tv_nominal"
+            app:layout_constraintStart_toEndOf="@id/tv_image"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 

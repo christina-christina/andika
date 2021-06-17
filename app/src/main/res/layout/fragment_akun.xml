@@ -150,53 +150,11 @@
                 android:gravity="center_vertical"
                 android:text="Upload Proposal" />
 
-            <TextView
-                android:id="@+id/tv_pengaturan_aplikasi"
-                style="@style/SmallLabelProfile"
-                android:text="PENGATURAN APLIKASI" />
-
-            <TextView
-                android:id="@+id/tv_pengaturan"
-                style="@style/ButtonThemeProfile"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical"
-                android:text="Pengaturan" />
-
-            <TextView
-                android:id="@+id/tv_versi_app"
-                style="@style/ButtonThemeProfile"
-                android:gravity="center_vertical"
-                android:text="Versi App" />
-
-            <TextView
-                android:id="@+id/tv_informasi"
-                style="@style/SmallLabelProfile"
-                android:text="INFORMASI" />
-
-            <TextView
-                android:id="@+id/tv_faq"
-                style="@style/ButtonThemeProfile"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical"
-                android:text="FAQ" />
-
-            <TextView
-                android:id="@+id/tv_syarat_kondisi"
-                style="@style/ButtonThemeProfile"
-                android:gravity="center_vertical"
-                android:text="Syarat and Kondisi" />
-
-
-            <TextView
-                android:id="@+id/tv_kebijakan_privasi"
-                style="@style/ButtonThemeProfile"
-                android:gravity="center_vertical"
-                android:text="Kebijakan Privasi" />
 
             <TextView
                 android:id="@+id/tv_akun"
                 style="@style/SmallLabelProfile"
-                android:text="AKUN" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/tv_keluar"

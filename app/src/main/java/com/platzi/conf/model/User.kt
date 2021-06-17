@@ -7,5 +7,8 @@ data class User (
     var noRekening: String? = null,
     var jummlahSaldo: String? = null,
     var tunggakan: String? = null,
-    var dicairkan: String? = null
+    var dicairkan: String? = null,
+    var ktmUrl: String? = null,
+    var ktpUrl: String? = null,
+    var proposalUrl: String? = null
 )

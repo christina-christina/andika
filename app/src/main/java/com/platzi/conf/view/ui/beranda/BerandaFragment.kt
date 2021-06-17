@@ -16,6 +16,7 @@ import com.platzi.conf.model.User
 import com.platzi.conf.viewModel.BerandaViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_beranda.*
+import java.text.NumberFormat
 
 /**
  * A simple [Fragment] subclass.
@@ -73,7 +74,7 @@ class BerandaFragment : Fragment() {
                     tv_nama.setText("")
                 }
                 if (resp.jummlahSaldo != null) {
-                    tv_saldo.setText("Rp " + resp.jummlahSaldo)
+                    tv_saldo.setText("Rp " + NumberFormat.getInstance().format(resp.jummlahSaldo!!.toInt()))
                 } else {
                     tv_saldo.setText("Rp 0")
                 }

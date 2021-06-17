@@ -17,53 +17,67 @@ class FirebaseStorageService {
 
     fun uploadProposal(callback:Callback<String>, uri: Uri) {
         firebaseStorage.getReference("proposal").child(uri.toString()).putFile(uri)
-                .addOnCompleteListener{ task ->
-                    if (task.isSuccessful) {
-                        callback.onSuccess("Berhasil upload")
-                    } else if (task.exception != null) {
-                        callback.onFailed(task.exception!!)
-                    } else {
-                        callback.onFailed(Exception("Gagal"))
+            .addOnSuccessListener{
+
+                firebaseStorage.getReference("proposal").child(uri.toString()).downloadUrl
+                    .addOnSuccessListener {
+                        callback.onSuccess(it.toString())
                     }
-                }
+                    .addOnFailureListener{
+                        callback.onFailed(it)
+                    }
+
+            }
+            .addOnFailureListener{
+                callback.onFailed(it)
+            }
     }
 
     fun uploadKtm(callback:Callback<String>, uri: Uri) {
         firebaseStorage.getReference("ktm").child(uri.toString()).putFile(uri)
-            .addOnCompleteListener{ task ->
-                if (task.isSuccessful) {
-                    callback.onSuccess("Berhasil upload")
-                } else if (task.exception != null) {
-                    callback.onFailed(task.exception!!)
-                } else {
-                    callback.onFailed(Exception("Gagal"))
-                }
+            .addOnSuccessListener{
+                firebaseStorage.getReference("ktm").child(uri.toString()).downloadUrl
+                    .addOnSuccessListener {
+                        callback.onSuccess(it.toString())
+                    }
+                    .addOnFailureListener{
+                        callback.onFailed(it)
+                    }
+            }
+            .addOnFailureListener{
+                callback.onFailed(it)
             }
     }
 
     fun uploadKtp(callback:Callback<String>, uri: Uri) {
         firebaseStorage.getReference("ktp").child(uri.toString()).putFile(uri)
-            .addOnCompleteListener{ task ->
-                if (task.isSuccessful) {
-                    callback.onSuccess("Berhasil upload")
-                } else if (task.exception != null) {
-                    callback.onFailed(task.exception!!)
-                } else {
-                    callback.onFailed(Exception("Gagal"))
-                }
+            .addOnSuccessListener{
+                firebaseStorage.getReference("ktp").child(uri.toString()).downloadUrl
+                    .addOnSuccessListener {
+                        callback.onSuccess(it.toString())
+                    }
+                    .addOnFailureListener{
+                        callback.onFailed(it)
+                    }
+            }
+            .addOnFailureListener{
+                callback.onFailed(it)
             }
     }
 
     fun uploadBuktiPembayaran(callback:Callback<String>, uri: Uri) {
         firebaseStorage.getReference("pembayaran").child(uri.toString()).putFile(uri)
-            .addOnCompleteListener{ task ->
-                if (task.isSuccessful) {
-                    callback.onSuccess("Berhasil upload")
-                } else if (task.exception != null) {
-                    callback.onFailed(task.exception!!)
-                } else {
-                    callback.onFailed(Exception("Gagal"))
-                }
+            .addOnSuccessListener{
+                firebaseStorage.getReference("pembayaran").child(uri.toString()).downloadUrl
+                    .addOnSuccessListener {
+                        callback.onSuccess(it.toString())
+                    }
+                    .addOnFailureListener{
+                        callback.onFailed(it)
+                    }
+            }
+            .addOnFailureListener{
+                callback.onFailed(it)
             }
     }
 

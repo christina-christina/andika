@@ -3,8 +3,11 @@ package com.platzi.conf.view.ui.profil
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +15,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 
 import com.platzi.conf.R
 import com.platzi.conf.model.User
@@ -28,6 +33,8 @@ class DataDiriFragment : Fragment() {
     private val KTM = 66
     private val KTP = 88
     private lateinit var uri: Uri
+    private lateinit var bitmapKtm: Bitmap
+    private lateinit var bitmapKtp: Bitmap
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,6 +70,7 @@ class DataDiriFragment : Fragment() {
             launchFilePickerKtp()
         }
 
+        viewModel.getDataDiri()
         observerViewModel()
     }
 
@@ -71,6 +79,7 @@ class DataDiriFragment : Fragment() {
         viewModel.uploadDataResponse.observe(viewLifecycleOwner, Observer<String> { resp ->
             Toast.makeText(activity, resp, Toast.LENGTH_SHORT).show()
             if (resp.contains("Berhasil")) {
+                findNavController().navigate(R.id.action_dataDiriFragment_to_akunFragment)
 
             }
         })
@@ -89,11 +98,56 @@ class DataDiriFragment : Fragment() {
             }
         })
 
+        viewModel.getDataResponse.observe(viewLifecycleOwner, Observer<User> { resp ->
+
+            et_nama_lengkap.setText(resp.namaLengkap ?: "")
+            et_no_hp.setText(resp.noHp ?: "")
+            et_nama_bank.setText(resp.namaBank ?: "")
+            et_no_rekening.setText(resp.noRekening ?: "")
+
+            if (resp.ktmUrl != null) {
+                tv_upload_ktm.setText("Telah di-upload")
+            }
+
+            if (resp.ktpUrl != null) {
+                tv_upload_ktp.setText("Telah di-upload")
+            }
+        })
+
+
+        viewModel.analisisKtmResponse.observe(viewLifecycleOwner, Observer<String> { resp ->
+
+//            Log.i("Hasil analisis ", resp)
+            if (resp != null) {
+
+                Glide.with(requireActivity()).load(bitmapKtm).fitCenter().into(iv_ktm)
+                iv_ktm.visibility = View.VISIBLE
+
+                tv_ktm_detection.text = "Terdeteksi : " + resp
+                tv_ktm_detection.visibility = View.VISIBLE
+            }
+
+        })
+
+        viewModel.analisisKtpResponse.observe(viewLifecycleOwner, Observer<String> { resp ->
+
+//            Log.i("Hasil analisis ", resp)
+            if (resp != null) {
+
+                Glide.with(requireActivity()).load(bitmapKtp).fitCenter().into(iv_ktp)
+                iv_ktp.visibility = View.VISIBLE
+
+                tv_ktp_detection.text = "Terdeteksi : " + resp
+                tv_ktp_detection.visibility = View.VISIBLE
+            }
+
+        })
+
+
         viewModel.isLoading.observe(viewLifecycleOwner, Observer <Boolean> {
 
         })
     }
-
 
     private fun launchFilePickerKtp() {
         val intent = Intent()
@@ -119,8 +173,12 @@ class DataDiriFragment : Fragment() {
 
                 if (requestCode == KTM) {
                     viewModel.uploadKtm(uri)
+                    bitmapKtm = MediaStore.Images.Media.getBitmap(requireActivity().contentResolver, uri)
+                    viewModel.analisisFotoKtm(bitmapKtm)
                 } else {
                     viewModel.uploadKtp(uri)
+                    bitmapKtp = MediaStore.Images.Media.getBitmap(requireActivity().contentResolver, uri)
+                    viewModel.analisisFotoKtp(bitmapKtp)
                 }
             }
         }

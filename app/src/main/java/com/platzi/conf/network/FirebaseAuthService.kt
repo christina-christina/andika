@@ -22,7 +22,7 @@ class FirebaseAuthService {
                 }
     }
 
-    fun register(callback:Callback<String>, email: String, password: String, user: User){
+    fun register(callback:Callback<String>, email: String, password: String){
         this.firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {

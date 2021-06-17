@@ -11,7 +11,7 @@ import com.platzi.conf.network.FirebaseStorageService
 import com.platzi.conf.network.FirestoreService
 import java.lang.Exception
 
-class PembayaranViewModel:ViewModel() {
+class PembayaranViewModel : ViewModel() {
 
     val firebaseStorageService = FirebaseStorageService()
     val firestoreService = FirestoreService()
@@ -20,25 +20,11 @@ class PembayaranViewModel:ViewModel() {
     var dataPembayaranResponse: MutableLiveData<List<Pembayaran>> = MutableLiveData()
     var isLoading = MutableLiveData<Boolean>()
 
-    fun onRefresh(){
+    fun onRefresh() {
 
     }
 
-    fun uploadBuktiBayar(uri: Uri) {
-        firebaseStorageService.uploadBuktiPembayaran(object:Callback<String> {
-            override fun onSuccess(result: String?) {
-                uploadBuktiResponse.value = result
-                processFinished()
-            }
-
-            override fun onFailed(exception: Exception) {
-                uploadBuktiResponse.value = exception.message
-                processFinished()
-            }
-        }, uri)
-    }
-
-    fun simpanDataBayar(pembayaran: Pembayaran) {
+    fun simpanDataBayar(pembayaran: Pembayaran, uri: Uri) {
 
         firestoreService.getDataUser(object : Callback<User> {
             override fun onSuccess(result: User?) {
@@ -53,12 +39,12 @@ class PembayaranViewModel:ViewModel() {
 
                     if (nominalPembayaran <= tunggakan) {
 
-                        result.tunggakan = (tunggakan - nominalPembayaran).toString()
-
-                        firestoreService.simpanDataDiri(object : Callback<String> {
+                        firebaseStorageService.uploadBuktiPembayaran(object : Callback<String> {
                             override fun onSuccess(result: String?) {
 
-                                firestoreService.simpanDataPembayaran(object:Callback<String> {
+                                pembayaran.buktiUrl = result
+
+                                firestoreService.simpanDataPembayaran(object : Callback<String> {
                                     override fun onSuccess(result: String?) {
                                         uploadDataResponse.value = result
                                         processFinished()
@@ -69,13 +55,16 @@ class PembayaranViewModel:ViewModel() {
                                         processFinished()
                                     }
                                 }, pembayaran)
+
+                                processFinished()
                             }
 
                             override fun onFailed(exception: Exception) {
                                 uploadDataResponse.value = exception.message
                                 processFinished()
                             }
-                        }, result)
+                        }, uri)
+
                     }
                     processFinished()
                 }
@@ -87,23 +76,22 @@ class PembayaranViewModel:ViewModel() {
             }
         })
 
-        processFinished()
-
     }
 
     fun getDataPembayaran() {
-        firestoreService.getDataPembayaran(object:Callback<List<Pembayaran>> {
+        firestoreService.getDataPembayaran(object : Callback<List<Pembayaran>> {
             override fun onSuccess(result: List<Pembayaran>?) {
                 dataPembayaranResponse.value = result
                 processFinished()
             }
+
             override fun onFailed(exception: Exception) {
                 processFinished()
             }
         })
     }
 
-    fun processFinished(){
-        this.isLoading.value=true
+    fun processFinished() {
+        this.isLoading.value = true
     }
 }

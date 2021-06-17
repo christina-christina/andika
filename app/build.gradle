@@ -19,6 +19,12 @@ android {
         jvmTarget = "1.8"
     }
 
+    aaptOptions {
+        noCompress "tflite"
+        // or noCompress "lite"
+    }
+
+
     defaultConfig {
         applicationId "com.platzi.conf"
         minSdkVersion 21
@@ -45,6 +51,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.2.0'
     implementation 'com.google.firebase:firebase-database:20.0.0'
     implementation 'com.google.firebase:firebase-storage:20.0.0'
+    implementation 'com.google.firebase:firebase-ml-vision:24.0.3'
+    implementation 'com.google.firebase:firebase-ml-vision-image-label-model:20.0.1'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -69,4 +78,7 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.0.1'
 
     testImplementation "junit:junit:5.2.0"
+
+    implementation 'com.google.mlkit:image-labeling-custom:16.3.1'
+    implementation 'com.google.mlkit:linkfirebase:16.1.1'
 }

@@ -17,6 +17,7 @@ import com.platzi.conf.viewModel.AuthViewModel
 import com.platzi.conf.viewModel.BerandaViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_akun.*
+import java.text.NumberFormat
 
 /**
  * A simple [Fragment] subclass.
@@ -70,19 +71,19 @@ class AkunFragment : Fragment() {
                 }
 
                 if (resp.jummlahSaldo != null) {
-                    tv_saldo_nominal.setText("Rp " + resp.jummlahSaldo)
+                    tv_saldo_nominal.setText("Rp " + NumberFormat.getInstance().format(resp.jummlahSaldo!!.toInt()))
                 } else {
                     tv_saldo_nominal.setText("Rp 0")
                 }
 
                 if (resp.tunggakan != null) {
-                    tv_tunggakan_nominal.setText("Rp " + resp.tunggakan)
+                    tv_tunggakan_nominal.setText("Rp " + NumberFormat.getInstance().format(resp.tunggakan!!.toInt()))
                 } else {
                     tv_tunggakan_nominal.setText("Rp 0")
                 }
 
                 if (resp.dicairkan != null) {
-                    tv_dicairkan_nominal.setText("Rp " + resp.dicairkan)
+                    tv_dicairkan_nominal.setText("Rp " + NumberFormat.getInstance().format(resp.dicairkan!!.toInt()))
                 } else {
                     tv_dicairkan_nominal.setText("Rp 0")
                 }

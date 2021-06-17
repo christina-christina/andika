@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#FFFFFF">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -71,70 +71,108 @@
 
         <TextView
             android:id="@+id/tv_upload_ktm"
+            style="@style/EditTextFormPeminjaman"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_gray"
+            android:padding="24dp"
             android:paddingRight="60dp"
             android:text="Upload KTM"
-            android:padding="24dp"
-            style="@style/EditTextFormPeminjaman"
             android:textColor="@android:color/darker_gray"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_ktm"/>
+            app:layout_constraintTop_toBottomOf="@id/tv_ktm" />
 
         <Button
             android:id="@+id/btn_upload_ktm"
+            style="@style/ButtonTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/ButtonTheme"
             android:padding="0dp"
             android:text="Pilih File"
+            app:layout_constraintBottom_toBottomOf="@id/tv_upload_ktm"
             app:layout_constraintEnd_toEndOf="@id/tv_upload_ktm"
-            app:layout_constraintTop_toTopOf="@id/tv_upload_ktm"
-            app:layout_constraintBottom_toBottomOf="@id/tv_upload_ktm"/>
+            app:layout_constraintTop_toTopOf="@id/tv_upload_ktm" />
+
+        <ImageView
+            android:id="@+id/iv_ktm"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="16dp"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tv_upload_ktm" />
+
+        <TextView
+            android:id="@+id/tv_ktm_detection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="5dp"
+            android:text="Terdeteksi : "
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/iv_ktm" />
 
         <TextView
             android:id="@+id/tv_ktp"
             style="@style/TextViewPeminjaman"
             android:text="KTP"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_upload_ktm" />
+            app:layout_constraintTop_toBottomOf="@id/tv_ktm_detection" />
 
         <TextView
             android:id="@+id/tv_upload_ktp"
+            style="@style/EditTextFormPeminjaman"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_gray"
+            android:padding="24dp"
             android:paddingRight="60dp"
             android:text="Upload KTP"
-            android:padding="24dp"
-            style="@style/EditTextFormPeminjaman"
             android:textColor="@android:color/darker_gray"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_ktp"/>
+            app:layout_constraintTop_toBottomOf="@id/tv_ktp" />
 
         <Button
             android:id="@+id/btn_upload_ktp"
+            style="@style/ButtonTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/ButtonTheme"
             android:padding="0dp"
             android:text="Pilih File"
+            app:layout_constraintBottom_toBottomOf="@id/tv_upload_ktp"
             app:layout_constraintEnd_toEndOf="@id/tv_upload_ktp"
-            app:layout_constraintTop_toTopOf="@id/tv_upload_ktp"
-            app:layout_constraintBottom_toBottomOf="@id/tv_upload_ktp"/>
+            app:layout_constraintTop_toTopOf="@id/tv_upload_ktp" />
+
+
+        <ImageView
+            android:id="@+id/iv_ktp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="16dp"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tv_upload_ktp" />
+
+        <TextView
+            android:id="@+id/tv_ktp_detection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="5dp"
+            android:text="Terdeteksi : "
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/iv_ktp" />
 
         <Button
             android:id="@+id/btn_simpan"
             style="@style/ButtonTheme"
-            android:text="Simpan"
-            app:layout_constraintTop_toBottomOf="@id/tv_upload_ktp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="40dp"
             android:enabled="true"
-            android:layout_marginTop="20dp"/>
-
+            android:text="Simpan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ktp_detection" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

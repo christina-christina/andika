@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.platzi.conf.R
 import com.platzi.conf.model.Pinjaman
 import kotlinx.android.synthetic.main.riwayat_peminjaman_card.view.*
+import java.text.NumberFormat
 import java.time.format.DateTimeFormatter
 
 class RiwayatPeminjamanAdapter(val riwayat : MutableList<Pinjaman>) : RecyclerView.Adapter<RiwayatPeminjamanAdapter.RiwayatPeminjamanViewHolder>() {
@@ -28,13 +29,15 @@ class RiwayatPeminjamanAdapter(val riwayat : MutableList<Pinjaman>) : RecyclerVi
                 holder.card.tv_jenis.text = "Uang Bulanan"
             }
 
-            holder.card.tv_nominal.text = "Rp " + riwayat_item.nominalPengajuan
+            holder.card.tv_nominal.text = "Rp " + NumberFormat.getInstance().format(riwayat_item.nominalPengajuan!!.toInt())
 
             val tanggal = DateTimeFormatter.ofPattern("dd MMMM").format(DateTimeFormatter.ofPattern("dd/MM/yyyy").parse(riwayat_item.tanggalPengajuan))
             val tahun = DateTimeFormatter.ofPattern("yyyy").format(DateTimeFormatter.ofPattern("dd/MM/yyyy").parse(riwayat_item.tanggalPengajuan))
 
             holder.card.tv_tanggal.text = tanggal
             holder.card.tv_tahun.text = tahun
+
+            holder.card.tv_status.text = riwayat_item.status
         }
     }
 

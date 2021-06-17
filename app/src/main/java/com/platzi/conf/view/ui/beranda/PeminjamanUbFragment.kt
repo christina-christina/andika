@@ -44,9 +44,10 @@ class PeminjamanUbFragment : Fragment() {
             var pinjaman = Pinjaman(
                 nominalPengajuan = et_nominal.text.toString(),
                 tanggalPengajuan = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date()),
-                jenis = "uang_bulanan"
+                jenis = "uang_bulanan",
+                status = "Menunggu konfirmasi"
             )
-            viewModel.simpanPinjamanUb(pinjaman)
+            viewModel.simpanPinjaman(pinjaman)
         }
 
         observerViewModel()

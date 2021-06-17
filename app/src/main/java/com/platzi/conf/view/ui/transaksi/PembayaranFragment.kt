@@ -55,9 +55,10 @@ class PembayaranFragment : Fragment() {
         btn_kirim.setOnClickListener {
             var pembayaran = Pembayaran(
                 nominal = et_nominal_bayar.text.toString(),
-                tanggal = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
+                tanggal = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date()),
+                status = "Menunggu konfirmasi"
             )
-            viewModel.simpanDataBayar(pembayaran)
+            viewModel.simpanDataBayar(pembayaran, uri)
         }
 
         btn_bukti.setOnClickListener {
@@ -98,7 +99,6 @@ class PembayaranFragment : Fragment() {
                 return
             } else {
                 uri = data!!.data
-                viewModel.uploadBuktiBayar(uri)
             }
         }
     }
